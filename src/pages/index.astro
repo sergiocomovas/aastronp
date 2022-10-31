@@ -1,0 +1,38 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import HeaderNav from '../components/HeaderNav.astro';
+import Footer from '../components/Footer.astro';
+import LogoBlur from '../components/LogoBlur.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import Pueblos from '../components/Pueblos.svelte';
+import Foobar from '../components/Foobar.svelte';
+---
+
+<!DOCTYPE html>
+<html lang="en" color-mode="user">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<HeaderNav title={SITE_TITLE} />
+		<LogoBlur velocidad="15" titulo="👋 Bientenido a mi nueva página." subtitulo="Aquí encontrarás mis apuntes y componentes varios."/>
+		<main>
+			<section>
+				<header>
+					<h1>Ejercicios Svelte</h1>	
+					📄 Documentación: <a href="https://micro.cosasdev.comovas.es/svelte/">Micro Cosas Dev</a>
+				</header>
+
+					<r-grid columns="8">
+						<r-cell span="3">Este botón es un componente Svelte que Astro "rehidrata" cuando la página está siendo cargada (client:load). El botón, a su vez, llama e intercambia entre sucesivos componentes Sveltes lo que permitiría, por ejemplo, cargar datos como un servicio de router básico.
+							<br><Foobar client:load/> 
+						</r-cell>
+						<r-cell span="5..">
+						Carga (fetch) un archivo con un JSON incluído en ASTRO como <a href="pueblos.json">endpoint</a> como promesa y la muestra con la directiva #each de Svelte.<br><Pueblos client:load/> </r-cell>
+					</r-grid>
+			</section>			
+		
+		</main>
+		<Footer />
+	</body>
+</html>

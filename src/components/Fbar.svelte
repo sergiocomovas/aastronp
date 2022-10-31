@@ -1,0 +1,1 @@
+<h1 style="color:crimson">Componente 1</h1>
