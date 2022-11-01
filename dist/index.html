@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="user">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="generator" content="Astro v1.6.1">
+
+<!-- Primary Meta Tags -->
+<title>My personal website.</title>
+<meta name="title" content="My personal website.">
+<meta name="description" content="Welcome to my website!">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:title" content="My personal website.">
+<meta property="og:description" content="Welcome to my website!">
+<meta property="og:image" content="https://example.com/placeholder-social.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://example.com/">
+<meta property="twitter:title" content="My personal website.">
+<meta property="twitter:description" content="Welcome to my website!">
+<meta property="twitter:image" content="https://example.com/placeholder-social.jpg">
+
+	<link rel="stylesheet" href="/assets/about.fe38177c.css" />
+<link rel="stylesheet" href="/assets/index.a0d2a62e.css" /></head>
+	<body>
+		<header class="astro-Z5I4JCSZ">
+  <nav class="astro-Z5I4JCSZ">
+    <h2 class="astro-Z5I4JCSZ">My personal website.</h2>
+    <ul class="astro-Z5I4JCSZ">
+      <li class="astro-Z5I4JCSZ"><a href="/" class="astro-Z5I4JCSZ astro-3EJL25VA">
+	Home
+</a>
+</li>
+      <li class="astro-Z5I4JCSZ"><a href="/blog" class="astro-Z5I4JCSZ astro-3EJL25VA">
+	Blog
+</a>
+</li>
+      <li class="astro-Z5I4JCSZ"><a href="/about" class="astro-Z5I4JCSZ astro-3EJL25VA">
+	About
+</a>
+</li>
+      <li class="astro-Z5I4JCSZ"><button class="astro-Z5I4JCSZ">Redes Sociales</button>
+        <ul class="astro-Z5I4JCSZ">
+          <li class="astro-Z5I4JCSZ">Linkedin</li>
+          <li class="astro-Z5I4JCSZ">Github</li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+
+
+		<section style="margin-top: -10rem;" class="astro-KCEXNX7O">
+
+  <r-grid columns="8" columns-s="5" class="astro-KCEXNX7O"> 
+
+    <r-cell style="display: flex; align-items:flex-end" span="1-3" class="astro-KCEXNX7O">
+        <aside class="astro-KCEXNX7O">
+          <h1 class="astro-KCEXNX7O">👋 Bientenido a mi nueva página.</h1>
+          <h4 style="color: var(--color-bg-secondary)" class="astro-KCEXNX7O">Aquí encontrarás mis apuntes y componentes varios.</h4>
+        </aside>
+      </r-cell><!-- CIERRE OK -->
+    
+    <r-cell span="5.." class="astro-KCEXNX7O">
+      <figure class="astro-KCEXNX7O">
+        <section style="animation: pulse 15s cubic-bezier(0,0,0,.5) infinite;" class="img-bg astro-KCEXNX7O"></section>
+        <img id="letras" src="/img/comovaslogo_solotexto_cuadrado.svg" alt="comovas-logo" class="astro-KCEXNX7O">
+      </figure>
+    </r-cell>
+
+  </r-grid> 
+
+</section>
+
+
+
+		<main>
+			<section>
+				<header>
+					<h1>Ejercicios Svelte</h1>	
+					📄 Documentación: <a href="https://micro.cosasdev.comovas.es/svelte/">Micro Cosas Dev</a>
+				</header>
+
+					<style>astro-island,astro-slot{display:contents}</style><script>(self.Astro=self.Astro||{}).load=a=>{(async()=>await(await a())())()},window.dispatchEvent(new Event("astro:load"));var l;{const c={0:t=>t,1:t=>JSON.parse(t,o),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(JSON.parse(t,o)),5:t=>new Set(JSON.parse(t,o)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(JSON.parse(t)),9:t=>new Uint16Array(JSON.parse(t)),10:t=>new Uint32Array(JSON.parse(t))},o=(t,s)=>{if(t===""||!Array.isArray(s))return s;const[e,n]=s;return e in c?c[e](n):void 0};customElements.get("astro-island")||customElements.define("astro-island",(l=class extends HTMLElement{constructor(){super(...arguments);this.hydrate=()=>{if(!this.hydrator||this.parentElement&&this.parentElement.closest("astro-island[ssr]"))return;const s=this.querySelectorAll("astro-slot"),e={},n=this.querySelectorAll("template[data-astro-template]");for(const r of n){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(const r of s){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("name")||"default"]=r.innerHTML)}const a=this.hasAttribute("props")?JSON.parse(this.getAttribute("props"),o):{};this.hydrator(this)(this.Component,a,e,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),window.removeEventListener("astro:hydrate",this.hydrate),window.dispatchEvent(new CustomEvent("astro:hydrate"))}}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((s,e)=>{e.disconnect(),this.childrenConnectedCallback()}).observe(this,{childList:!0})}async childrenConnectedCallback(){window.addEventListener("astro:hydrate",this.hydrate);let s=this.getAttribute("before-hydration-url");s&&await import(s),this.start()}start(){const s=JSON.parse(this.getAttribute("opts")),e=this.getAttribute("client");if(Astro[e]===void 0){window.addEventListener(`astro:${e}`,()=>this.start(),{once:!0});return}Astro[e](async()=>{const n=this.getAttribute("renderer-url"),[a,{default:r}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),i=this.getAttribute("component-export")||"default";if(!i.includes("."))this.Component=a[i];else{this.Component=a;for(const d of i.split("."))this.Component=this.Component[d]}return this.hydrator=r,this.hydrate},s,this)}attributeChangedCallback(){this.hydrator&&this.hydrate()}},l.observedAttributes=["props"],l))}</script><r-grid columns="8">
+						<r-cell span="3">Este botón es un componente Svelte que Astro "rehidrata" cuando la página está siendo cargada (client:load). El botón, a su vez, llama e intercambia entre sucesivos componentes Sveltes lo que permitiría, por ejemplo, cargar datos como un servicio de router básico.
+							<br><astro-island uid="a7II6" component-url="/Foobar.35833763.js" component-export="default" renderer-url="/client.788af3ea.js" props="{}" ssr="" client="load" opts="{&quot;name&quot;:&quot;Foobar&quot;,&quot;value&quot;:true}" await-children=""><aside style="background-color:var(--color-bg-secondary)"><button>Cambiar</button></aside>
+
+
+<aside><h1 style="color:crimson">Componente 1</h1></aside></astro-island> 
+						</r-cell>
+						<r-cell span="5..">
+						Carga (fetch) un archivo con un JSON incluído en ASTRO como <a href="pueblos.json">endpoint</a> como promesa y la muestra con la directiva #each de Svelte.<br><astro-island uid="Z2e74xV" component-url="/Pueblos.de65ac5e.js" component-export="default" renderer-url="/client.788af3ea.js" props="{}" ssr="" client="load" opts="{&quot;name&quot;:&quot;Pueblos&quot;,&quot;value&quot;:true}" await-children=""><div>
+	<p>Loading...</p>
+</div></astro-island> </r-cell>
+					</r-grid>
+			</section>			
+		
+		</main>
+		<footer class="astro-4XU6VB77">
+	&copy; 2022 YOUR NAME HERE. All rights reserved.
+</footer>
+
+	</body></html>

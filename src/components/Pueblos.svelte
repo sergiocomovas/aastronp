@@ -1,6 +1,6 @@
 <script>
   async function cargarPueblos() {
-    let response = await fetch("http://127.0.0.1:3000/pueblos.json");
+    let response = await fetch("pueblos.json");
     let pueblos = await response.json();
     return pueblos;
   }
