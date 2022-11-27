@@ -1,0 +1,31 @@
+---
+import { SITE_TITLE } from '../config';
+import HeaderLink from './MvHeaderLink.astro';
+import NanoBoton from './NanoBoton.svelte';
+import NanoMenu from './NanoMenu.svelte';
+const {verNanoBoton} = Astro.props;
+const enlacesLinks = [
+  {titul:"Home", ref:"/"},
+  {titul:"Blog", ref:"/blog"}, 
+  {titul:"About", ref:"/about"}
+];
+---
+<!-- ARCHIVO TIPO .ASTRO -->
+
+
+<header>
+  <nav>
+    <h2>{SITE_TITLE}</h2>
+    <ul>
+      {enlacesLinks.map( 
+        (x) => <li><HeaderLink href={x.ref}>{x.titul}</HeaderLink></li>
+      )}
+      {verNanoBoton && <li><NanoBoton client:load /></li> }
+    </ul>
+  </nav>
+  
+</header>
+
+<NanoMenu client:load />
+
+

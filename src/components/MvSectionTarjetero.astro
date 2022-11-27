@@ -1,0 +1,91 @@
+---
+import NanoAadirCosas from '../components/NanoAñadirCosas.svelte';
+import ListPueblos from '../components/ListPueblos.svelte';
+import ListAves from '../components/ListAves.svelte';
+import CambiarComponentes from '../components/CambiarComponentes.svelte';
+---
+<script src="../js/horizontalWheel.js"></script>
+
+<section>
+
+  <div class="hdeslizante row-full">
+    --
+    <aside class="fuente4">
+      <NanoAadirCosas client:load>
+				<h1>Nanostores</h1>
+				Es para compartir el estado entre componentes.
+				<br>
+				<button>Comprar 1 astronauta</button>
+			</NanoAadirCosas>
+    </aside>
+    <aside>
+      <div><h1>Lista: Pueblos de Mallorca</h1>
+      <h6><ListPueblos client:load/></h6></div>
+    </aside>
+    <aside>
+     <div><h1>Lista: Aves de Baleares</h1>
+      <h6><ListAves client:load/></h6></div>
+    </aside>
+    <aside><div>
+      Cambio de componentes<CambiarComponentes client:load/>
+    </div></aside>
+    <aside class="fuente4"><h1>Más Componentes Pronto</h1></aside>
+  </div>
+  
+</section>
+
+
+
+<style>
+
+.row-full{
+    width: 100vw;
+    position: relative;
+    margin-left: -87vw;
+    margin-right:0vw;
+    margin-top: 20px;
+    left: 50%;
+    height: 80vh;
+}
+
+.hdeslizante {
+  overflow-x: hidden;
+  display: flex;
+}
+
+.hdeslizante:hover{
+  background-color: #0d3ded10
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.fuente4{
+   font-size: 4ch;
+}
+
+
+
+aside {
+  min-width: 50vw;
+  min-height: 50vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+aside:nth-child(even) {
+  background-color: #03252550;
+  color: white;
+}
+
+aside:nth-child(odd) {
+  background-color: #1c012550;
+  color: white;
+}
+
+
+</style>
