@@ -1,0 +1,13 @@
+{
+    "AppSyncApiName": "aastronp",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "S3DeploymentBucket": "amplify-amplify8a05a25bdee54-staging-222116-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/4f88f02938122bb3a836ffbaebb68503a6a372e0"
+}

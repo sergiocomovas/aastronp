@@ -1,0 +1,324 @@
+
+type NewForm1 @aws_iam @aws_api_key {
+  id: ID!
+  name: String
+  username: String
+  email: AWSEmail
+  address: AWSJSON
+  phone: String
+  website: AWSURL
+  company: AWSJSON
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  _version: Int!
+  _deleted: Boolean
+  _lastChangedAt: AWSTimestamp!
+}
+
+type QueEs @aws_iam @aws_api_key {
+  id: ID!
+  nombre: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  _version: Int!
+  _deleted: Boolean
+  _lastChangedAt: AWSTimestamp!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelNewForm1Connection @aws_api_key @aws_iam {
+  items: [NewForm1]!
+  nextToken: String
+  startedAt: AWSTimestamp
+}
+
+input ModelNewForm1FilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  username: ModelStringInput
+  email: ModelStringInput
+  address: ModelStringInput
+  phone: ModelStringInput
+  website: ModelStringInput
+  company: ModelStringInput
+  and: [ModelNewForm1FilterInput]
+  or: [ModelNewForm1FilterInput]
+  not: ModelNewForm1FilterInput
+}
+
+type Query {
+  getNewForm1(id: ID!): NewForm1 @aws_api_key @aws_iam
+  listNewForm1s(filter: ModelNewForm1FilterInput, limit: Int, nextToken: String): ModelNewForm1Connection @aws_api_key @aws_iam
+  syncNewForm1s(filter: ModelNewForm1FilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelNewForm1Connection @aws_api_key @aws_iam
+  getQueEs(id: ID!): QueEs @aws_api_key @aws_iam
+  listQueEs(filter: ModelQueEsFilterInput, limit: Int, nextToken: String): ModelQueEsConnection @aws_api_key @aws_iam
+  syncQueEs(filter: ModelQueEsFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelQueEsConnection @aws_api_key @aws_iam
+}
+
+input ModelNewForm1ConditionInput {
+  name: ModelStringInput
+  username: ModelStringInput
+  email: ModelStringInput
+  address: ModelStringInput
+  phone: ModelStringInput
+  website: ModelStringInput
+  company: ModelStringInput
+  and: [ModelNewForm1ConditionInput]
+  or: [ModelNewForm1ConditionInput]
+  not: ModelNewForm1ConditionInput
+}
+
+input CreateNewForm1Input {
+  id: ID
+  name: String
+  username: String
+  email: AWSEmail
+  address: AWSJSON
+  phone: String
+  website: AWSURL
+  company: AWSJSON
+  _version: Int
+}
+
+input UpdateNewForm1Input {
+  id: ID!
+  name: String
+  username: String
+  email: AWSEmail
+  address: AWSJSON
+  phone: String
+  website: AWSURL
+  company: AWSJSON
+  _version: Int
+}
+
+input DeleteNewForm1Input {
+  id: ID!
+  _version: Int
+}
+
+type Mutation {
+  createNewForm1(input: CreateNewForm1Input!, condition: ModelNewForm1ConditionInput): NewForm1 @aws_api_key @aws_iam
+  updateNewForm1(input: UpdateNewForm1Input!, condition: ModelNewForm1ConditionInput): NewForm1 @aws_api_key @aws_iam
+  deleteNewForm1(input: DeleteNewForm1Input!, condition: ModelNewForm1ConditionInput): NewForm1 @aws_api_key @aws_iam
+  createQueEs(input: CreateQueEsInput!, condition: ModelQueEsConditionInput): QueEs @aws_api_key @aws_iam
+  updateQueEs(input: UpdateQueEsInput!, condition: ModelQueEsConditionInput): QueEs @aws_api_key @aws_iam
+  deleteQueEs(input: DeleteQueEsInput!, condition: ModelQueEsConditionInput): QueEs @aws_api_key @aws_iam
+}
+
+input ModelSubscriptionNewForm1FilterInput {
+  id: ModelSubscriptionIDInput
+  name: ModelSubscriptionStringInput
+  username: ModelSubscriptionStringInput
+  email: ModelSubscriptionStringInput
+  address: ModelSubscriptionStringInput
+  phone: ModelSubscriptionStringInput
+  website: ModelSubscriptionStringInput
+  company: ModelSubscriptionStringInput
+  and: [ModelSubscriptionNewForm1FilterInput]
+  or: [ModelSubscriptionNewForm1FilterInput]
+}
+
+type Subscription {
+  onCreateNewForm1(filter: ModelSubscriptionNewForm1FilterInput): NewForm1 @aws_subscribe(mutations: ["createNewForm1"]) @aws_api_key @aws_iam
+  onUpdateNewForm1(filter: ModelSubscriptionNewForm1FilterInput): NewForm1 @aws_subscribe(mutations: ["updateNewForm1"]) @aws_api_key @aws_iam
+  onDeleteNewForm1(filter: ModelSubscriptionNewForm1FilterInput): NewForm1 @aws_subscribe(mutations: ["deleteNewForm1"]) @aws_api_key @aws_iam
+  onCreateQueEs(filter: ModelSubscriptionQueEsFilterInput): QueEs @aws_subscribe(mutations: ["createQueEs"]) @aws_api_key @aws_iam
+  onUpdateQueEs(filter: ModelSubscriptionQueEsFilterInput): QueEs @aws_subscribe(mutations: ["updateQueEs"]) @aws_api_key @aws_iam
+  onDeleteQueEs(filter: ModelSubscriptionQueEsFilterInput): QueEs @aws_subscribe(mutations: ["deleteQueEs"]) @aws_api_key @aws_iam
+}
+
+type ModelQueEsConnection @aws_api_key @aws_iam {
+  items: [QueEs]!
+  nextToken: String
+  startedAt: AWSTimestamp
+}
+
+input ModelQueEsFilterInput {
+  id: ModelIDInput
+  nombre: ModelStringInput
+  and: [ModelQueEsFilterInput]
+  or: [ModelQueEsFilterInput]
+  not: ModelQueEsFilterInput
+}
+
+input ModelQueEsConditionInput {
+  nombre: ModelStringInput
+  and: [ModelQueEsConditionInput]
+  or: [ModelQueEsConditionInput]
+  not: ModelQueEsConditionInput
+}
+
+input CreateQueEsInput {
+  id: ID
+  nombre: String
+  _version: Int
+}
+
+input UpdateQueEsInput {
+  id: ID!
+  nombre: String
+  _version: Int
+}
+
+input DeleteQueEsInput {
+  id: ID!
+  _version: Int
+}
+
+input ModelSubscriptionQueEsFilterInput {
+  id: ModelSubscriptionIDInput
+  nombre: ModelSubscriptionStringInput
+  and: [ModelSubscriptionQueEsFilterInput]
+  or: [ModelSubscriptionQueEsFilterInput]
+}
+

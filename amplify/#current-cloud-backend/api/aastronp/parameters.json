@@ -1,0 +1,5 @@
+{
+  "AppSyncApiName": "aastronp",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false
+}
