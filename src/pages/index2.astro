@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Título de tu sitio web</title>
+    <style>
+      /* Estilos para el menú */
+      .sticky-menu {
+        position: fixed; /* Fija la posición del menú en la página */
+        top: 0; /* Sitúa el menú en la parte superior de la página */
+        width: 100%; /* Hace que el menú ocupe todo el ancho de la página */
+        background-color: #333; /* Cambia el color de fondo del menú */
+        z-index: 1; /* Hace que el menú esté por encima de otros elementos de la página */
+      }
+      /* Estilos para los elementos del menú */
+      .menu-items {
+        display: flex; /* Hace que los elementos del menú se dispongan en línea */
+        justify-content: space-between; /* Distribuye los elementos del menú de forma equitativa en el espacio disponible */
+        list-style-type: none; /* Quita los marcadores de la lista */
+        margin: 0; /* Quita los márgenes de la lista */
+        padding: 10px; /* Añade un padding a la lista */
+      }
+      /* Estilos para cada elemento individual del menú */
+      .menu-item {
+        color: #fff; /* Cambia el color del texto del menú */
+        text-decoration: none; /* Quita la decoración del texto del menú */
+        font-size: 20px; /* Cambia el tamaño del texto del menú */
+      }
+      /* Estilos para el contenido de la página */
+      .page-content {
+        margin-top: 60px; /* Añade un margen superior para dejar espacio al menú fijado en la parte superior */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sticky-menu">
+      <ul class="menu-items">
+        <li class="menu-item"><a href="#">Inicio</a></li>
+        <li class="menu-item"><a href="#">Acerca de</a></li>
+        <li class="menu-item"><a href="#">Productos</a></li>
+        <li class="menu-item"><a href="#">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="page-content">
+      <h1>Título de tu página</h1>
+      <p>Aquí va el contenido de tu página.</p>
+    </div>
+  </body>
+</html>
