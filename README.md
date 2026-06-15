@@ -1,71 +1,73 @@
-# Mis apuntes
+# 🌌 Astro Blog with Svelte Islands & Nanostores
 
-- Subdominio
-- NPM
-- Replicar  <https://twitter.com/_davideast/status/1586002781777039360>
+> Learning project: building a blog with Astro's island architecture, Svelte interactivity, and nanostores for micro-state management.
 
------
+## What Is This?
 
-## Astro Starter Kit: Blog
+A static blog built with **Astro** that uses **Svelte components as interactive islands**. Instead of shipping a full SPA, Astro renders HTML at build time and only hydrates the interactive parts (Svelte components) where needed.
 
-```BASH
-npm create astro@latest -- --template blog
+This project was also deployed as a **micro-frontend** — loaded inside a React host application via iframe at `micro.cosasdev.comovas.es`.
+
+## What I Learned
+
+| Concept | Implementation |
+|---------|---------------|
+| **Astro island architecture** | Static HTML with selective hydration (`client:load`, `client:visible`) |
+| **Svelte in Astro** | `.svelte` components as interactive islands inside `.astro` pages |
+| **Nanostores (micro-state)** | Lightweight state management: `NanoBoton`, `NanoMenu`, `NanoAñadirCosas` |
+| **Component switching** | `CambiarComponentes` — router-like component swapping without a router |
+| **Data fetching** | `ListPueblos` & `ListAves` — fetching JSON endpoints at build time |
+| **Content collections** | Markdown + MDX blog posts with frontmatter |
+| **RSS & Sitemap** | Auto-generated RSS feed and sitemap.xml |
+| **CSS Grid** | Raster grid system (`r-grid`, `r-cell`) for responsive layouts |
+| **Micro-frontends** | Deployed as an iframe child of a React host app |
+
+## Tech Stack
+
+- **Astro 1.6** — static site generator with island architecture
+- **Svelte 3** — interactive island components
+- **Nanostores** — ultra-light state management
+- **MDX** — Markdown with embedded components
+- **Raster Grid** — CSS grid layout system
+- **TypeScript** — type-safe config and data files
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Foobar.svelte          # Island: component switcher demo
+│   ├── NanoBoton.svelte       # Nanostore-powered button
+│   ├── NanoMenu.svelte        # Nanostore-powered menu
+│   ├── NanoAñadirCosas.svelte # Nanostore: add items to state
+│   ├── CambiarComponentes.svelte  # Dynamic component loader
+│   ├── ListPueblos.svelte     # Fetch + render pueblos data
+│   └── ListAves.svelte        # Fetch + render aves data
+├── layouts/
+│   └── BlogPost.astro         # Blog post template
+├── pages/
+│   ├── index.astro            # Home with Svelte island demos
+│   ├── blog.astro             # Blog listing
+│   ├── blog/*.md              # Markdown blog posts
+│   ├── about.md               # About page
+│   ├── english/vocabulario.md # English vocabulary notes
+│   ├── pueblos.json.js        # JSON data endpoint
+│   └── rss.xml.js             # RSS feed generator
+└── config.ts                  # Site config
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
+## Run It
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![blog](https://user-images.githubusercontent.com/4677417/186189140-4ef17aac-c3c9-4918-a8c2-ce86ba1bb394.png)
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```BASH
-├── public/
-├── src/
-│   ├── components/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+```bash
+npm install
+npm run dev     # → localhost:3000
+npm run build   # → ./dist/
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Live Demo
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+🌐 `micro.cosasdev.comovas.es` — restored and live!
 
-Any static assets, like images, can be placed in the `public/` directory.
+---
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+*Part of my learning journey at [comovas.es](https://web.comovas.es)*
