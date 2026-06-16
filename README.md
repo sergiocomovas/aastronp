@@ -6,7 +6,7 @@
 
 A static blog built with **Astro** that uses **Svelte components as interactive islands**. Instead of shipping a full SPA, Astro renders HTML at build time and only hydrates the interactive parts (Svelte components) where needed.
 
-This project was also deployed as a **micro-frontend** — loaded inside a React host application via iframe at `micro.cosasdev.comovas.es`.
+This project was also deployed as a **micro-frontend** — loaded inside a React host application via iframe at `cosasdev.comovas.es/micro`.
 
 ## What I Learned
 
@@ -66,7 +66,7 @@ npm run build   # → ./dist/
 
 ## Live Demo
 
-🌐 `micro.cosasdev.comovas.es` — restored and live!
+🌐 `cosasdev.comovas.es/micro` — restored and live!
 
 ---
 
